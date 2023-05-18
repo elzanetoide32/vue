@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    
+</head>
+<body>
+    <div id="app">
+        <p>{{mensaje}}</p>
+        <p>aprendiendo vue en {{curso}}</p>
+        <!--v-text-->
+        VUE fue desarrollado por: <span v-text="desarrollador"></span>
+        en el año <span v-text="anio"></span>
+        <!--directivas v-html-->
+        <div v-html="titulo"></div>
+        <!--directivas v-bind-->
+        <a v-bind:href="url" v-bind:class="claseCSS">Ir a
+            Google</a>
+        <!--directiva v-show-->
+        Usuario: codoacodo
+        <span v-show="login">(Identificado...)</span>
+        <!--directivas v-for-->
+        <li v-for="fruta in frutas">
+            {{ fruta }}
+        </li>
+        <!--directivas v-if-->
+        <ul>
+            <li v-for="fruta in frutas1">
+                {{ fruta.nombre }} - {{ fruta.cantidad }}
+                <span v-if="fruta.cantidad===0"> (Sin Stock)</span>
+                <span v-else-if="fruta.cantidad<5"> (Stock Bajo)</span>
+                <span v-else="fruta.cantidad>=5"> (Stock Alto)</span></span>
+            </li>
+        </ul>
+        <!--directivas v-model-->
+        <p><input v-model="mensaje"></p>
+        <!--directivas v-on-->
+        <button v-on:click="counter += 1">Agregar 1</button>
+        <button v-on:click="counter -= 1">disminuir 1</button>
+        <span> Clics: {{ counter }}</span>
+        <!--watcher-->
+        <p>Kilometros:</p><input type="text" v-model="kilometros">
+        <p>Metros:</p><input type="text" v-model="metros">
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="vue.js"></script>
+</body>
+</html>
